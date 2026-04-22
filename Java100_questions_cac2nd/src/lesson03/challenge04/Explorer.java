@@ -62,11 +62,21 @@ public class Explorer {
 		System.out.println("吊り橋発見！\n");
 
 		int fullLength = 300;
-		int member = 0;
-
+		int member = 1;
 
 		//ここにwhile文を利用した処理を記述
-
+		while (member < 6) {
+			System.out.println("隊長：");
+			System.out.println(member + "人目が渡り始めたよ\n");
+			fullLength -= 50;
+			while (fullLength > 0) {
+				fullLength -= 50;
+				System.out.println("隊長：");
+				System.out.println("まだ渡ってるよ\n");
+			}
+			member++;
+			fullLength = 300;
+		}
 
 		System.out.println("全員渡り終わったよ！");
 

@@ -74,8 +74,8 @@ public class Explorer {
 	public static void main(String[] args) throws IOException {
 
 		System.out.println("隊長：");
-		System.out.println("ワニ3匹発見！\n");
-		System.out.println("グーワニかチョキワニかパーワニのどれかです。\n");
+		System.out.println("ワニ3匹発見！");
+		System.out.println("グーワニかチョキワニかパーワニのどれかです。");
 
 		int alligator = 0;
 		int hand = 0;
@@ -83,9 +83,69 @@ public class Explorer {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-
 		//ここにwhile文、if文を利用した処理を記述
+		while (i < 3) {
+			System.out.println("\n隊長：");
+			System.out.println("どの手を出して通り抜けますか");
+			System.out.print("（グー… 1 : チョキ… 2 : パー… 3）＞");
+			String hand_str = br.readLine();
+			hand = Integer.parseInt(hand_str);
 
+			alligator = (int) (Math.random() * 10 % 3) + 1;
+			//alligator = 1・・・ぐーわに
+			//alligator = 2・・・ちょきわに
+			//alligator = 3・・・ぱーわに
+
+			if (hand == 1) {
+				if (alligator == 1) {
+					System.out.println("隊長：");
+					System.out.println("相手はグーワニでした。");
+					System.out.println((i + 1) + "匹目通り抜け成功ですね");
+				} else if (alligator == 2) {
+					System.out.println("隊長：");
+					System.out.println("相手はチョキワニでした。");
+					System.out.println((i + 1) + "匹目通り抜け成功ですね");
+				} else {
+					System.out.println("隊長：");
+					System.out.println("相手はパーワニでした。");
+					break;
+				}
+			} else if (hand == 2) {
+				if (alligator == 1) {
+					System.out.println("隊長：");
+					System.out.println("相手はグーワニでした。");
+					break;
+				} else if (alligator == 2) {
+					System.out.println("隊長：");
+					System.out.println("相手はチョキワニでした。");
+					System.out.println((i + 1) + "匹目通り抜け成功ですね");
+				} else {
+					System.out.println("隊長：");
+					System.out.println("相手はパーワニでした。");
+					System.out.println((i + 1) + "匹目通り抜け成功ですね");
+				}
+			} else if (hand == 3) {
+				if (alligator == 1) {
+					System.out.println("隊長：");
+					System.out.println("相手はグーワニでした。");
+					System.out.println((i + 1) + "匹目通り抜け成功ですね");
+				} else if (alligator == 2) {
+					System.out.println("隊長：");
+					System.out.println("相手はチョキワニでした。");
+					System.out.println((i + 1) + "匹目通り抜け成功ですね");
+				} else {
+					System.out.println("隊長：");
+					System.out.println("相手はパーワニでした。");
+					System.out.println((i + 1) + "匹目通り抜け成功ですね");
+				}
+			} else {
+				System.out.println("隊長：");
+				System.out.println("そんな手はありませんよ。もう一度入れてください。");
+				continue;
+
+			}
+			i++;
+		}
 
 		if (i == 3) {
 			System.out.println("隊長：");
