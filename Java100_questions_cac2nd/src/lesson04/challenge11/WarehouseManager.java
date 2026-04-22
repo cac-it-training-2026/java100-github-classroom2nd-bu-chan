@@ -66,12 +66,24 @@ public class WarehouseManager {
 
 	public static void main(String[] args) {
 
-
 		//ここに必要な配列の宣言を記述する。
-
+		int[][] MQarray = new int[3][5];
+		//MQarray[0] = Cのコンテナ
+		//MQarray[1] = Dのコンテナ
+		//MQarray[2] = Eのコンテナ
 
 		//ここに配列に値を代入する処理を記述する。(要素はランダム)
-
+		int empty = 0;
+		for (int i = 0; i < MQarray.length; i++) {
+			for (int j = 0; j < MQarray[0].length; j++) {
+				empty = (int) (Math.random() * 10) % 4;
+				if (empty == 0) {
+					MQarray[i][j] = 0;
+				} else {
+					MQarray[i][j] = (int) (Math.random() * 10) + 1;
+				}
+			}
+		}
 
 		System.out.println("E主任：");
 		System.out.println("MQ運送の件、お願いします。\n");
@@ -81,52 +93,96 @@ public class WarehouseManager {
 
 		System.out.print("C...");
 
-
 		//ここに配列Cの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQarray[0].length; i++) {
+			System.out.print(MQarray[0][i]);
+			if (i != MQarray[0].length - 1) {
+				System.out.print(". ");
+			}
+		}
 
 		System.out.print("\n\nD...");
 
-
 		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQarray[1].length; i++) {
+			System.out.print(MQarray[1][i]);
+			if (i != MQarray[1].length - 1) {
+				System.out.print(". ");
+			}
+		}
 
 		System.out.print("\n\nE...");
 
-
 		//ここに配列Eの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQarray[2].length; i++) {
+			System.out.print(MQarray[2][i]);
+			if (i != MQarray[2].length - 1) {
+				System.out.print(". ");
+			}
+		}
 
 		System.out.println("\n\nでした。直してきます...\n");
 
-
 		//ここに詰め替え処理を記述する
+		int[] change_array = new int[5];
+		int count_0;
+		int count_not0;
 
+		for (int i = 0; i < MQarray.length; i++) {
+			count_0 = 0;
+			count_not0 = 0;
+			for (int j = 0; j < MQarray[0].length; j++) {
+				if (MQarray[i][j] == 0) {
+					change_array[change_array.length - 1 - count_0] = MQarray[i][j];
+					count_0++;
+				} else {
+					change_array[count_not0] = MQarray[i][j];
+					count_not0++;
+				}
+			}
+			for (int j = 0; j < MQarray[0].length; j++) {
+				MQarray[i][j] = change_array[j];
+			}
+
+		}
 
 		System.out.println("Yさん：");
 		System.out.println("直してきました。\n");
 
 		System.out.print("C...");
 
-
 		//ここに配列Cの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQarray[0].length; i++) {
+			System.out.print(MQarray[0][i]);
+			if (i != (MQarray[0].length - 1)) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nD...");
 
-
 		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQarray[1].length; i++) {
+			System.out.print(MQarray[1][i]);
+			if (i != (MQarray[1].length - 1)) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nE...");
 
-
 		//ここに配列Eの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQarray[2].length; i++) {
+			System.out.print(MQarray[2][i]);
+			if (i != (MQarray[2].length - 1)) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.println("\n\nになりました。\n");
 
 		System.out.println("E主任：");
 		System.out.println("ご苦労さまでした。");
+
 	}
 }

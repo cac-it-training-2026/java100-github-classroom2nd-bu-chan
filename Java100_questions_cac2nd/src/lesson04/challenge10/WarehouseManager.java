@@ -61,12 +61,40 @@ public class WarehouseManager {
 
 	public static void main(String[] args) {
 
-
 		//ここに必要な配列の宣言を記述する。
-
+		int[] MQarrayC = new int[5];
+		int[] MQarrayD = new int[5];
+		int[] MQarrayE = new int[5];
 
 		//ここに配列に値を代入する処理を記述する。(要素はランダム)
+		int empty = 0;
 
+		for (int i = 0; i < MQarrayC.length; i++) {
+			empty = (int) (Math.random() * 10) % 4;
+			if (empty == 0) {
+				MQarrayC[i] = 0;
+			} else {
+				MQarrayC[i] = (int) (Math.random() * 10) + 1;
+			}
+		}
+
+		for (int i = 0; i < MQarrayD.length; i++) {
+			empty = (int) (Math.random() * 10) % 4;
+			if (empty == 0) {
+				MQarrayD[i] = 0;
+			} else {
+				MQarrayD[i] = (int) (Math.random() * 10) + 1;
+			}
+		}
+
+		for (int i = 0; i < MQarrayE.length; i++) {
+			empty = (int) (Math.random() * 10) % 4;
+			if (empty == 0) {
+				MQarrayE[i] = 0;
+			} else {
+				MQarrayE[i] = (int) (Math.random() * 10) + 1;
+			}
+		}
 
 		System.out.println("E主任：");
 		System.out.println("MQ運送から預かった荷物の確認をお願いします。\n");
@@ -76,21 +104,33 @@ public class WarehouseManager {
 
 		System.out.print("C...");
 
-
 		//ここに配列Cの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQarrayC.length; i++) {
+			System.out.print(MQarrayC[i]);
+			if (i != (MQarrayC.length - 1)) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nD...");
 
-
 		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQarrayD.length; i++) {
+			System.out.print(MQarrayD[i]);
+			if (i != (MQarrayD.length - 1)) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nE...");
 
-
 		//ここに配列Eの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQarrayE.length; i++) {
+			System.out.print(MQarrayE[i]);
+			if (i != (MQarrayE.length - 1)) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.println("\n\nです。\n");
 
