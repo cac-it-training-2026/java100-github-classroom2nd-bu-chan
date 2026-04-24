@@ -124,26 +124,20 @@ public class WarehouseManager {
 		System.out.println("\n\nでした。直してきます...\n");
 
 		//ここに詰め替え処理を記述する
-		int[] change_array = new int[5];
-		int count_0;
-		int count_not0;
+		int[] change_array = new int[15];
+		int count_0 = 0;
+		int count_not0 = 0;
 
 		for (int i = 0; i < MQarray.length; i++) {
-			count_0 = 0;
-			count_not0 = 0;
-			for (int j = 0; j < MQarray[0].length; j++) {
-				if (MQarray[i][j] == 0) {
-					change_array[change_array.length - 1 - count_0] = MQarray[i][j];
-					count_0++;
-				} else {
+			for (int j = 0; j < MQarray[i].length; j++) {
+				if (MQarray[i][j] != 0) {
 					change_array[count_not0] = MQarray[i][j];
 					count_not0++;
+				} else {
+					change_array[14 - count_0] = MQarray[i][j];
+					count_0++;
 				}
 			}
-			for (int j = 0; j < MQarray[0].length; j++) {
-				MQarray[i][j] = change_array[j];
-			}
-
 		}
 
 		System.out.println("Yさん：");
@@ -152,9 +146,9 @@ public class WarehouseManager {
 		System.out.print("C...");
 
 		//ここに配列Cの要素をすべて出力する処理を記述する。
-		for (int i = 0; i < MQarray[0].length; i++) {
-			System.out.print(MQarray[0][i]);
-			if (i != (MQarray[0].length - 1)) {
+		for (int i = 0; i < 5; i++) {
+			System.out.print(change_array[i]);
+			if (i != 4) {
 				System.out.print(",");
 			}
 		}
@@ -162,9 +156,9 @@ public class WarehouseManager {
 		System.out.print("\n\nD...");
 
 		//ここに配列Dの要素をすべて出力する処理を記述する。
-		for (int i = 0; i < MQarray[1].length; i++) {
-			System.out.print(MQarray[1][i]);
-			if (i != (MQarray[1].length - 1)) {
+		for (int i = 5; i < 10; i++) {
+			System.out.print(change_array[i]);
+			if (i != 19) {
 				System.out.print(",");
 			}
 		}
@@ -172,9 +166,9 @@ public class WarehouseManager {
 		System.out.print("\n\nE...");
 
 		//ここに配列Eの要素をすべて出力する処理を記述する。
-		for (int i = 0; i < MQarray[2].length; i++) {
-			System.out.print(MQarray[2][i]);
-			if (i != (MQarray[2].length - 1)) {
+		for (int i = 10; i < 14; i++) {
+			System.out.print(change_array[i]);
+			if (i != 14) {
 				System.out.print(",");
 			}
 		}
