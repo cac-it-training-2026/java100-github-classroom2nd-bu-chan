@@ -28,6 +28,34 @@
 
 package lesson01.challenge04;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Patisserie {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+		System.out.print("シトロン\t\t>");
+		String sito = reader.readLine();
+
+		System.out.print("ショコラ\t\t>");
+		String syoko = reader.readLine();
+
+		System.out.print("ピスターシュ\t>");
+		String pisuta = reader.readLine();
+
+		System.out.println();
+
+		System.out.println("シトロン\t\t" + sito + "個");
+		System.out.println("ショコラ\t\t" + syoko + "個");
+		System.out.println("ピスターシュ\t" + pisuta + "個");
+
+		System.out.println();
+
+		System.out.println("をお買いあげですね");
+		System.out.println("承りました。");
+	}
 
 }
